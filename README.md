@@ -8,9 +8,11 @@ Verification script and assembled Quran text for the [74:30 Project](https://743
 
 The Quran contains 29 chapters marked with combinations of Arabic letters called the Muqatta'at. Chapter 74, verse 30 states: *"Over it are nineteen."*
 
-When you count the named letters across their chapters, grouped by their shared initials, you get 13 totals. All 13 divide by 19. Their sum — 39,349 — equals 19² × 109, where 109 is the 29th prime and 29 is the number of marked chapters. That same number is also the total word count of those 29 chapters.
+Count the named letters across those chapters, grouped by shared initials, and you get 13 totals. All 13 divide by 19. Their sum is **39,349** — which factors as **19² × 109**, where 109 is the 29th prime and 29 is the number of marked chapters.
 
-This repository contains everything needed to verify this independently.
+The total word count of those same 29 chapters is also 39,349.
+
+Two independent counts. One number. Everything needed to verify this is in this repository.
 
 ## Quick Start
 
@@ -61,9 +63,24 @@ Upload `fractal_edition.txt` to any AI and ask it to verify the claims.
 | 13 | TS | 27 | 1,007 | 53 | 2 |
 | | **Total** | | **39,349** | **2,071** | |
 
-**Tier 1** (8 groups): Zero parameters. Consonants + plain alif only. Encoding-independent. (1/19)⁸ ≈ 10⁻¹⁰.
+## Two Tiers of Evidence
 
-**Tier 2** (5 groups): Constrained. Require specific Uthmani alif variants. Not load-bearing — reject all five and the core result is unchanged.
+**Tier 1 (8 groups):** Zero parameter choices beyond the named letters and surahs. Character set is either the named consonants, or consonants plus plain alif (ا) — encoded identically in every Arabic text. No variant-form choices, no edition switching on counted characters. Tier 1 subtotal: **27,683**, with each of the 8 groups divisible by 19.
+
+**Tier 2 (5 groups):** Require specific alif-variant subsets from the Uthmani manuscript tradition. These subsets are the paper's only parameterized choices and are fully documented in the verification appendix.
+
+**Separate zero-parameter result:** The word count of the 29 marked chapters is **39,349**. Word tokenization requires no character-set specification. This count is reached independently of the letter-count work and meets it at the same value.
+
+## What Survives Rejection of Tier 2
+
+A reader may reject any or all of the Tier 2 specifications. The following results do not depend on them:
+
+- The 8 Tier 1 group totals (all divisible by 19)
+- The Tier 1 subtotal: 27,683
+- The 29-chapter word count: 39,349
+- The book-level counts: 114 surahs, 6,232 verses, 82,498 words (all divisible by 19)
+
+Rejecting all 5 Tier 2 groups removes the grand-total letter factorization (19² × P(29)) but leaves the word count and the Tier 1 structure intact.
 
 ## Requirements
 
